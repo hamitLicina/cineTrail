@@ -1,14 +1,20 @@
-import { useState } from 'react'
+
 import './App.css'
+import Header from './components/Header/Header'
+import { BrowserRouter } from 'react-router-dom'
+import ThemeContextProvider from './contexts/ThemeContext';
+
 
 function App() {
   
 
   return (
     <>
-      <div>
-        <h1>Hello React</h1>
-      </div>
+      <ThemeContextProvider>
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
+      </ThemeContextProvider>
     </>
   )
 }
