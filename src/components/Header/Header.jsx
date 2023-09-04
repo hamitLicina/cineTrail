@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md'
-import {ThemeContext} from '../../contexts/ThemeContext'
+import { ThemeContext } from '../../contexts/ThemeContext'
 
 
 const Header = () => {
