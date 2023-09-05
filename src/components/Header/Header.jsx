@@ -9,10 +9,6 @@ const Header = () => {
 
     const { darkMode, setDarkMode } = useContext(ThemeContext)
 
-    // const handleTheme = () => {
-    //     const newDarkMode = !darkMode;
-    //     setDarkMode(newDarkMode)
-    // };
 
   return (
     <header className={`header-container ${!darkMode && "header-light"}`}>
@@ -23,10 +19,10 @@ const Header = () => {
         <div className="header-buttons-container">
             <div className="theme-buttons-container">
                 <div className="theme-buttons">
-                    <MdOutlineLightMode className={`theme-icon ${!darkMode && 'theme-icon-active'}`} onClick={() => {setDarkMode(false) 
-                        localStorage.setItem('darkMode', false)}} />
-                    <MdOutlineDarkMode className={`theme-icon ${darkMode && 'theme-icon-active'}`} onClick={() => {setDarkMode(true)
-                        localStorage.setItem('darkMode', true)}} />
+                    <MdOutlineLightMode className={`theme-icon ${!darkMode && 'theme-icon-active'}`} 
+                    onClick={() => {setDarkMode(false); localStorage.setItem('darkMode', false)}} />
+                    <MdOutlineDarkMode className={`theme-icon ${darkMode && 'theme-icon-active'}`} 
+                    onClick={() => {setDarkMode(true); localStorage.setItem('darkMode', true)}} />
                 </div>
             </div>
             <button className='create-account'>Create an Account</button>
