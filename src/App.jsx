@@ -8,8 +8,8 @@ import HomePage from './pages/HomePage/HomePage';
 
 function App() {
 
-  const apiKey = "bb036d495213ae007c88e96440e9d0e8"
-  const baseUrl = "https://api.themoviedb.org/3"
+  const apiKey = import.meta.env.VITE_API_KEY
+  const baseUrl = import.meta.env.VITE_BASE_URL
   
 
   return (

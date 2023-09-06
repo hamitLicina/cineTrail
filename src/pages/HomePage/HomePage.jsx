@@ -3,7 +3,8 @@ import './HomePage.css'
 import Slider from '../../components/Slider/Slider'
 
 
-function HomePage({apiKey, baseUrl}) {
+
+const HomePage = ({apiKey, baseUrl}) => {
   return (
     <Slider apiKey={apiKey} baseUrl={baseUrl} />
   )
