@@ -9,6 +9,7 @@ const Header = () => {
 
     const { darkMode, setDarkMode } = useContext(ThemeContext)
 
+    //   API Key: bb036d495213ae007c88e96440e9d0e8   https://api.themoviedb.org/3/movie/550?api_key=bb036d495213ae007c88e96440e9d0e8
 
   return (
     <header className={`header-container ${!darkMode && "header-light"}`}>
