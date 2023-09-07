@@ -27,7 +27,7 @@ const Genres = ({movieGenres, apiKey, baseUrl}) => {
         {movieGenres?.map((id, index) => {
             const genre = allGenres.find(genre => genre.id === id)
             return (
-                <p>{genre?.name}{index !== movieGenres.length - 1 && ", "}&nbsp;</p>
+                <p key={index}>{genre?.name}{index !== movieGenres.length - 1 && ", "}&nbsp;</p>
             )
         })}
     </div>
