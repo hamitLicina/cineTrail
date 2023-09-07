@@ -3,6 +3,8 @@ import './Slider.css'
 import axios from 'axios'
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md"
 import Genres from '../Genres/Genres'
+import Rating from '../Rating/Rating'
+import { Link } from 'react-router-dom'
 
 
 
@@ -10,6 +12,7 @@ const Slider = ({apiKey, baseUrl}) => {
 
     const [upcomingMovies, setUpcomingMovies] = useState([])
     const [index, setIndex] = useState(0)
+    const [movieRatings, setMovieRatings] = useState([])
     const imageBaseUrl = import.meta.env.VITE_IMAGE_BASE_URL
 
  //   console.log(baseUrl + " " + apiKey)
@@ -20,6 +23,8 @@ const Slider = ({apiKey, baseUrl}) => {
     axios.get(`${baseUrl}/movie/upcoming?api_key=${apiKey}`).then(res => {
        //  console.log(res.data.results) Instead of clg we will State
        setUpcomingMovies(res.data.results)
+       const ratings = res.data.results.map(movie => movie.vote_average / 2)
+       setMovieRatings(ratings)
     })
 
  }, [])
@@ -58,6 +63,8 @@ const Slider = ({apiKey, baseUrl}) => {
                 <p className="slider-description">{upcomingMovies[index]?.overview.slice(0, 130)}...</p>
                 <Genres movieGenres={upcomingMovies[index]?.genre_ids} apiKey={apiKey} baseUrl={baseUrl} />
                 <p>Release Date: {upcomingMovies[index]?.release_date}</p>
+                <Rating movieRating={movieRatings[index]} />
+                <Link to={`/moviedetails/${upcomingMovies[index]?.id}`} className='see-details'>See Details</Link>
             </div>
         </div>
         
