@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './HomePage.css'
 import Slider from '../../components/Slider/Slider'
 import axios from 'axios'
+import MovieCard from '../../components/MovieCard/MovieCard'
 
 
 
@@ -33,7 +34,7 @@ const HomePage = ({apiKey, baseUrl}) => {
           <div className="popular-cards-wrapper">
             {
               popularMovies.map(movie => {
-                return <p key={movie?.id}>{movie?.title}</p>
+                return <MovieCard height="200px" width="100px" movie={movie} />
               })
             }
           </div>
@@ -43,7 +44,7 @@ const HomePage = ({apiKey, baseUrl}) => {
           <div className="top-rated-cards-wrapper">
             {
               topRatedMovies.map(movie => {
-                return <p key={movie?.id}>{movie?.title}</p>
+                return <MovieCard height="100px" width="80px" movie={movie} />
               })
             }
           </div>
