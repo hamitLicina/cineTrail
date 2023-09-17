@@ -3,6 +3,7 @@ import Header from './components/Header/Header'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ThemeContextProvider from './contexts/ThemeContext';
 import HomePage from './pages/HomePage/HomePage';
+// Movie Details will be added and update
 
 
 

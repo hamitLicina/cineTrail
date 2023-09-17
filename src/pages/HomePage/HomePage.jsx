@@ -54,21 +54,21 @@ const handlePage = page => {
           <div className="popular-cards-wrapper">
             {
               popularMovies.map(movie => {
-                return <MovieCard height="300px" width="200px" movie={movie} imageUrl={movie?.poster_path} radius="16px" cardStyle="popular-card" />
+                return ( <MovieCard height="300px" width="200px" movie={movie} imageUrl={movie?.poster_path} radius="16px" cardStyle="popular-card" key={movie?.id} /> )
               })
             }
           </div>
           <div className="page-numbers">
             <p>Select Page</p>
-            {pageNumbers.map(item => (<p className={item === page ? "current-page" : "page"} key={item} onClick={() => handlePage(item)} >{item}</p>))}
+            {pageNumbers.map((item) => (<p className={item === page ? "current-page" : "page"} key={item} onClick={() => handlePage(item)} >{item}</p>))}
           </div>
         </div>
         <div className="top-rated-container">
           <h3>Top Rated Movies</h3>
           <div className="top-rated-cards-wrapper">
             {
-              topRatedMovies.map(movie => {
-                return <MovieCard height="100px" width="200px" imageUrl={movie?.backdrop_path} movie={movie} cardStyle="top-rated-card" key={movie?.id} />
+              topRatedMovies.map((movie) => {
+                return ( <MovieCard height="100px" width="200px" imageUrl={movie?.backdrop_path} movie={movie} cardStyle="top-rated-card" key={movie?.id} /> )
               })
             }
           </div>
