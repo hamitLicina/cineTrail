@@ -2,7 +2,6 @@ import React from 'react'
 import './Rating.css'
 import StarRatings from 'react-star-ratings'
 
-
 const Rating = ({movieRating}) => {
   return (
     <div className='rating'>

@@ -3,10 +3,9 @@ import './Genres.css'
 import axios from 'axios'
 
 
-const Genres = ({movieGenres, apiKey, baseUrl}) => {
+const Genres = (props) => {
+    const { movieGenres = [], apiKey, baseUrl, component } = props
     const [allGenres, setAllGenres] = useState([])
-
-//  console.log(`${baseUrl}/genre/movie/list?api_key=${apiKey}`)
 
    useEffect(() => {
     const fetchGenres = async () => {
@@ -22,12 +21,14 @@ const Genres = ({movieGenres, apiKey, baseUrl}) => {
    }, []) // We only do this once
 
   return (
-    <div style={{display:"flex"}}>
+    <div style={{ display: "flex" }}>
         <p>Genres:&nbsp;</p>
-        {movieGenres?.map((id, index) => {
-            const genre = allGenres.find(genre => genre.id === id)
+        { component === "details" ? movieGenres?.map((genre, index) => ( 
+        <p key={index}>{genre?.name}{index !== movieGenres.length -1 && ","}&nbsp;</p>))
+        : movieGenres?.map((id, index) => {
+            const genre = allGenres.find((genre) => genre.id === id)
             return (
-                <p key={index}>{genre?.name}{index !== movieGenres.length - 1 && ", "}&nbsp;</p>
+                <p key={index}>{genre?.name}{index !== movieGenres.length - 1 && ","}&nbsp;</p>
             )
         })}
     </div>
