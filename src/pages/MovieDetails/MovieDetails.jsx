@@ -83,12 +83,7 @@ function MovieDetails({ apiKey, baseUrl }) {
             <h4>Status:&nbsp; {movie?.status}</h4>
             <h4>Runtime:&nbsp; {movie?.runtime}&nbsp; min</h4>
             <h4>Budget:&nbsp; {movie?.budget}</h4>
-            <Genres
-              movieGenres={movie?.genres}
-              apiKey={apiKey}
-              baseUrl={baseUrl}
-              component="details"
-            />
+            <Genres movieGenres={movie?.genres} apiKey={apiKey} baseUrl={baseUrl} component="details" />
           </div>
         </div>
         <div className={`review-container ${!darkMode && "details-light"}`}>
@@ -97,10 +92,7 @@ function MovieDetails({ apiKey, baseUrl }) {
             <ReviewItem key={review?.id} review={review} />
           ))}
           {numReviewsToShow < totalNumReviews ? (
-            <p
-              className="review-number"
-              onClick={() => setNumReviewsToShow((prevState) => prevState + 3)}
-            >
+            <p className="review-number" onClick={() => setNumReviewsToShow((prevState) => prevState + 3)} >
               <em>Read More Reviews</em>
             </p>
           ) : (
