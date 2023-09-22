@@ -42,7 +42,7 @@ const HomePage = ({apiKey, baseUrl}) => {
 
 const handlePage = page => {
   setPage(page)
-  scrollTo({ top: 0, left: 0, behavior: "smooth" })
+  scrollTo({ top: 550, left: 0, behavior: "smooth" })
 }
 
   return (

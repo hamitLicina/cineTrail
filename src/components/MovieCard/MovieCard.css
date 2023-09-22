@@ -9,6 +9,7 @@
     top: 0;
     padding: 5px;
     color: var(--red);
+    /* font-size: 48px;  */ 
 }
 .movie-info-bottom {
     visibility: hidden;
@@ -45,6 +46,7 @@
 }
 
 @keyframes myAnim {
+    
  0% {
   opacity: 0;
  }
