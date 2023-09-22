@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import './MovieDetails.css'
 import { useParams } from 'react-router-dom'
 import { ThemeContext } from '../../contexts/ThemeContext'
+import { UserContext } from '../../contexts/UserContext'
 import ReactPlayer from 'react-player'
 import StarRatings from 'react-star-ratings'
 import axios from 'axios'
@@ -11,6 +12,7 @@ import ReviewItem from '../../components/ReviewItem/ReviewItem'
 
 
 function MovieDetails({ apiKey, baseUrl }) {
+
     const { darkMode, setDarkMode } = useContext(ThemeContext)
     const { movieId } = useParams()
     const [movie, setMovie] = useState(null)
@@ -18,6 +20,9 @@ function MovieDetails({ apiKey, baseUrl }) {
     const [reviews, setReviews] = useState([])
     const [numReviewsToShow, setNumReviewsToShow] = useState(3)
     const [totalNumReviews, setTotalNumReviews] = useState(0)
+    const { user, token } = useContext(UserContext)
+    const [added, setAdded] = useState(false)
+
     
     useEffect(() => {
       axios(`${import.meta.env.VITE_BASE_URL}/movie/${movieId}?api_key=${import.meta.env.VITE_API_KEY}`)
@@ -33,8 +38,32 @@ function MovieDetails({ apiKey, baseUrl }) {
       .then((res) => {setTotalNumReviews(res.data.results.length)
       setReviews(res.data.results)})
       .catch((err) => console.log(err))
-    }, [movieId])
+    }, [movieId, user])
+
+
+    useEffect(() => {
+      axios.post(`${serverUrl}/favoriteMovies/search`, {user_id: user?._id, tmdb_id: movie?.id, })
+      .then((res) => { if (res.data === null) setAdded(false) 
+        else {setAdded(true)}})
+      .catch((err) => console.log(err))
+    }, [user, movie])
     
+    const addToFavorites = () => {console.log(serverUrl)
+      if (!token) { alert("Please login to add a movie to your favorites.")
+    } else {axios.post(`${serverUrl}/favoriteMovies`, {user_id: user._id, movie_id: movie.id, })
+        .then((res) => {setAdded(true)})
+        .catch((err) => console.log(err))
+    }
+  }
+
+    const removeFromFavorites = () => {
+      axios.delete(`${serverUrl}/favoriteMovies/${user._id}/${movie.id}`)
+      .then((res) => {
+        console.log(res.data)
+        setAdded(false)})
+      .catch((err) => console.log(err))
+  }
+
   return (
     <div className={`movie-details-container ${!darkMode && "details-light"}`}>
       <div className="trailer-container">
@@ -56,6 +85,15 @@ function MovieDetails({ apiKey, baseUrl }) {
       <div className="details-container">
         <div className="title-container">
           <h1>{movie?.title}</h1>
+          {added ? (
+            <span className="remove-btn" onClick={removeFromFavorites}>
+              Remove from favorites.
+            </span>
+          ) : (
+            <span className="add-btn" onClick={addToFavorites}>
+              Add to favorites.
+            </span>
+          )}
         </div>
         <div className="rating">
           {movie && (

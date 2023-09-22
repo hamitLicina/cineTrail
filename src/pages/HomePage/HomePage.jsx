@@ -12,6 +12,8 @@ const HomePage = ({apiKey, baseUrl}) => {
   const [topRatedMovies, setTopRatedMovies] = useState([])
   const [page, setPage] = useState(1)
   const pageNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  
+  // console.log(`${baseUrl}/movie/popular?api_key=${apiKey}`);
 
 
   useEffect(() => {
