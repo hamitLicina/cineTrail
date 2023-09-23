@@ -17,7 +17,7 @@ function SignUp({serverUrl}) {
     
     const handleSignUp = (e) => {
         e.preventDefault()
-        axios.post(`${serverUrl}/users/signup`, {email,password,username})
+        axios.post(`${serverUrl}/users/signup`, {email, password, username})
         .then(res=>{
             console.log(res.data)
             if(res.data.status === 409) {
