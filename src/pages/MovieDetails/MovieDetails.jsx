@@ -11,7 +11,7 @@ import ReviewItem from '../../components/ReviewItem/ReviewItem'
 
 
 
-function MovieDetails({ apiKey, baseUrl }) {
+function MovieDetails({ apiKey, baseUrl, serverUrl }) {
 
     const { darkMode, setDarkMode } = useContext(ThemeContext)
     const { movieId } = useParams()

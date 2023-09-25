@@ -59,9 +59,9 @@
     flex-wrap: wrap; 
     border-radius: 8px; 
     margin-top: 20px;
-    box-shadow: -11px 2px 33px 1px rgba(8,7,7,0.75);
-    -webkit-box-shadow: -11px 2px 33px 1px rgba(8,7,7,0.75);
-    -moz-box-shadow: -11px 2px 33px 1px rgba(8,7,7,0.75);
+    box-shadow: -11px 2px 33px 1px rgba(8, 7, 7, 0.75);
+    -webkit-box-shadow: -11px 2px 33px 1px rgba(8, 7, 7, 0.75);
+    -moz-box-shadow: -11px 2px 33px 1px rgba(8, 7, 7, 0.75);
 }
 
  
