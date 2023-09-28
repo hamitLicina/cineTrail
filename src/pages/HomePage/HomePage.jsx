@@ -6,6 +6,7 @@ import MovieCard from '../../components/MovieCard/MovieCard'
 import { ThemeContext } from '../../contexts/ThemeContext'
 
 
+
 const HomePage = ({apiKey, baseUrl}) => {
 
   const { darkMode, setDarkMode } = useContext(ThemeContext)

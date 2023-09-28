@@ -11,6 +11,7 @@
     color: var(--red);
     /* font-size: 48px;  */ 
 }
+
 .movie-info-bottom {
     visibility: hidden;
     height: 50px;
@@ -29,6 +30,7 @@
     visibility: visible;
     animation: myAnim 2s ease 0s 1 normal forwards;
 }
+
 .popular-card:hover .movie-info-bottom {
     visibility: visible;
     animation: myAnim 2s ease 0s 1 normal forwards;
@@ -39,8 +41,9 @@
     font-size: 0.75rem;
     margin: 0 auto;
     cursor: pointer;
-    color: var(--white);
+    color: var(--red);
 }
+
 .top-rated-card p {
     margin-top: 10px;
 }
