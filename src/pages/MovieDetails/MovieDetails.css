@@ -1,6 +1,6 @@
 .movie-details-container {
     margin-top: var(--header-height);
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
 .trailer-container {
@@ -21,7 +21,7 @@
 .trailer-player {
     position: absolute;
     top: 0;
-    left: 0; 
+    left: 0;
 }
 
 .title-container {
@@ -67,6 +67,7 @@
     justify-content: space-between;
     margin-top: 20px;
 }
+
 .movie-info {
     width: 70%;
     display: flex;
@@ -84,7 +85,7 @@
     padding: 20px 0;
 }
 
-.reviews-title{
+.reviews-title {
     border-bottom: solid 2px gray;
     padding-bottom: 10px;
     font-size: 1.5rem;
@@ -97,7 +98,7 @@
 }
 
 @media (max-width:768px) {
- 
+
     .info-container {
         display: flex;
         flex-direction: column;
@@ -108,7 +109,9 @@
         margin-top: 20px;
     }
 
-    .movie-info h2, .movie-info h3, .movie-info h4 {
+    .movie-info h2,
+    .movie-info h3,
+    .movie-info h4 {
         margin-bottom: 10px;
     }
 
@@ -120,5 +123,4 @@
         margin-top: var(--header-height-mobile);
     }
 
- }
- 
+}

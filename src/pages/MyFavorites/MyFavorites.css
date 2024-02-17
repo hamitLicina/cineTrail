@@ -1,16 +1,16 @@
 .favorites-container {
-    min-height: 100vh;
-    margin-top: var(--header-height);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 50px;
- }
+   min-height: 100vh;
+   margin-top: var(--header-height);
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: flex-start;
+   padding: 50px;
+}
 
- @media (max-width:600px) {
-    
-    .favorites-container {
-        margin-top: var(--header-height-mobile);
+@media (max-width:600px) {
+
+   .favorites-container {
+      margin-top: var(--header-height-mobile);
    }
 }

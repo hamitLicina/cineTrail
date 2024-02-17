@@ -20,16 +20,16 @@ function App() {
   return (
     <>
       <CombinedContextProvider>
-      <BrowserRouter>
-        <Header apiKey={apiKey} baseUrl={baseUrl} />
-        <Routes>
-          <Route path='/' element={<HomePage apiKey={apiKey} baseUrl={baseUrl} />} />
-          <Route path='/movieDetails/:movieId' element={<MovieDetails apiKey={apiKey} baseUrl={baseUrl} serverUrl={serverUrl} />} />
-          <Route path="/myfavorites" element={<MyFavorites serverUrl={serverUrl} />} />
-          <Route path="/signup" element={<SignUp serverUrl={serverUrl} />} />
-          <Route path="/signin" element={<SignIn serverUrl={serverUrl} />} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Header apiKey={apiKey} baseUrl={baseUrl} />
+          <Routes>
+            <Route path='/' element={<HomePage apiKey={apiKey} baseUrl={baseUrl} />} />
+            <Route path='/movieDetails/:movieId' element={<MovieDetails apiKey={apiKey} baseUrl={baseUrl} serverUrl={serverUrl} />} />
+            <Route path="/myfavorites" element={<MyFavorites serverUrl={serverUrl} />} />
+            <Route path="/signup" element={<SignUp serverUrl={serverUrl} />} />
+            <Route path="/signin" element={<SignIn serverUrl={serverUrl} />} />
+          </Routes>
+        </BrowserRouter>
       </CombinedContextProvider>
     </>
   )

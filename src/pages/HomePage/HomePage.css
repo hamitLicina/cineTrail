@@ -1,7 +1,7 @@
 .homepage-container {
     margin-top: var(--header-height);
     color: var(--white);
-    min-height: 100vh; 
+    min-height: 100vh;
     padding-bottom: 20px;
 }
 
@@ -16,7 +16,7 @@
     padding: 20px;
 }
 
-.popular-container { 
+.popular-container {
     display: flex;
     flex-direction: column;
     padding: 0 20px;
@@ -56,15 +56,15 @@
 
 .top-rated-cards-wrapper {
     display: flex;
-    flex-wrap: wrap; 
-    border-radius: 8px; 
+    flex-wrap: wrap;
+    border-radius: 8px;
     margin-top: 20px;
     box-shadow: -11px 2px 33px 1px rgba(8, 7, 7, 0.75);
     -webkit-box-shadow: -11px 2px 33px 1px rgba(8, 7, 7, 0.75);
     -moz-box-shadow: -11px 2px 33px 1px rgba(8, 7, 7, 0.75);
 }
 
- 
+
 @media (max-width:768px) {
 
     .movies-wrapper {
@@ -73,12 +73,12 @@
     }
 
     .top-rated-container {
-        margin-top:50px;
-        width:80%;
+        margin-top: 50px;
+        width: 80%;
     }
 
     .page-numbers {
-        width:100%;
+        width: 100%;
     }
 }
 
@@ -87,5 +87,5 @@
     .homepage-container {
         margin-top: var(--header-height-mobile);
     }
-    
+
 }

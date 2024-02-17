@@ -13,54 +13,64 @@ import ReviewItem from '../../components/ReviewItem/ReviewItem'
 
 function MovieDetails({ apiKey, baseUrl, serverUrl }) {
 
-    const { darkMode, setDarkMode } = useContext(ThemeContext)
-    const { movieId } = useParams()
-    const [movie, setMovie] = useState(null)
-    const [trailerKey, setTrailerKey] = useState("")
-    const [reviews, setReviews] = useState([])
-    const [numReviewsToShow, setNumReviewsToShow] = useState(3)
-    const [totalNumReviews, setTotalNumReviews] = useState(0)
-    const { user, token } = useContext(UserContext)
-    const [added, setAdded] = useState(false)
+  const { darkMode, setDarkMode } = useContext(ThemeContext)
+  const { movieId } = useParams()
+  const [movie, setMovie] = useState(null)
+  const [trailerKey, setTrailerKey] = useState("")
+  const [reviews, setReviews] = useState([])
+  const [numReviewsToShow, setNumReviewsToShow] = useState(3)
+  const [totalNumReviews, setTotalNumReviews] = useState(0)
+  const { user, token } = useContext(UserContext)
+  const [added, setAdded] = useState(false)
 
-    
-    useEffect(() => {
-      axios(`${import.meta.env.VITE_BASE_URL}/movie/${movieId}?api_key=${import.meta.env.VITE_API_KEY}`)
-      .then((res) => {setMovie(res.data)})
+
+  useEffect(() => {
+    axios(`${import.meta.env.VITE_BASE_URL}/movie/${movieId}?api_key=${import.meta.env.VITE_API_KEY}`)
+      .then((res) => { setMovie(res.data) })
       .catch((err) => console.log(err))
 
-      axios(`${import.meta.env.VITE_BASE_URL}/movie/${movieId}/videos?api_key=${import.meta.env.VITE_API_KEY}`)
-      .then((res) => {const trailers = res.data.results.filter((video) => video.type === "Trailer" && video.site === "YouTube")
-      setTrailerKey(trailers[0].key)})
+    axios(`${import.meta.env.VITE_BASE_URL}/movie/${movieId}/videos?api_key=${import.meta.env.VITE_API_KEY}`)
+      .then((res) => {
+        const trailers = res.data.results.filter((video) => video.type === "Trailer" && video.site === "YouTube")
+        setTrailerKey(trailers[0].key)
+      })
       .catch((err) => console.log(err))
 
-      axios(`${import.meta.env.VITE_BASE_URL}/movie/${movieId}/reviews?api_key=${import.meta.env.VITE_API_KEY}`)
-      .then((res) => {setTotalNumReviews(res.data.results.length)
-      setReviews(res.data.results)})
+    axios(`${import.meta.env.VITE_BASE_URL}/movie/${movieId}/reviews?api_key=${import.meta.env.VITE_API_KEY}`)
+      .then((res) => {
+        setTotalNumReviews(res.data.results.length)
+        setReviews(res.data.results)
+      })
       .catch((err) => console.log(err))
-    }, [movieId, user])
+  }, [movieId, user])
 
 
-    useEffect(() => {
-      axios.post(`${serverUrl}/favoriteMovies/search`, {user_id: user?._id, tmdb_id: movie?.id, })
-      .then((res) => { if (res.data === null) setAdded(false) 
-        else {setAdded(true)}})
+  useEffect(() => {
+    axios.post(`${serverUrl}/favoriteMovies/search`, { user_id: user?._id, tmdb_id: movie?.id, })
+      .then((res) => {
+        if (res.data === null) setAdded(false)
+        else { setAdded(true) }
+      })
       .catch((err) => console.log(err))
-    }, [user, movie])
-    
-    const addToFavorites = () => {console.log(serverUrl)
-      if (!token) { alert("Please login to add a movie to your favorites.")
-    } else {axios.post(`${serverUrl}/favoriteMovies`, {user_id: user._id, movie_id: movie.id, })
-        .then((res) => {setAdded(true)})
-        .catch((err) => console.log(err))
+  }, [user, movie])
+
+  const addToFavorites = () => {
+    console.log(serverUrl)
+    if (!token) {
+      alert("Please login to add a movie to your favorites.")
+    } else {
+      axios.post(`${serverUrl}/favoriteMovies`, { user_id: user._id, movie_id: movie.id, })
+      .then((res) => { setAdded(true) })
+      .catch((err) => console.log(err))
     }
   }
 
-    const removeFromFavorites = () => {
-      axios.delete(`${serverUrl}/favoriteMovies/${user._id}/${movie.id}`)
+  const removeFromFavorites = () => {
+    axios.delete(`${serverUrl}/favoriteMovies/${user._id}/${movie.id}`)
       .then((res) => {
         console.log(res.data)
-        setAdded(false)})
+        setAdded(false)
+      })
       .catch((err) => console.log(err))
   }
 

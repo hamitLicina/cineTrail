@@ -36,7 +36,7 @@
 }
 
 .title-container p {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .input-wrapper {
@@ -47,21 +47,22 @@
 }
 
 .input-wrapper input {
-   border: none;
-   padding: 8px 16px;
-   border-radius: 8px;
-   margin-top: 10px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
 .input-wrapper-light input {
-  border: 1px solid var(--footer-bg);
+    border: 1px solid var(--footer-bg);
 }
 
-.cancelbtn, .signupbtn {
+.cancelbtn,
+.signupbtn {
     border: none;
     padding: 5px 16px;
     border-radius: 8px;
-    color: white; 
+    color: white;
     cursor: pointer;
 }
 
@@ -91,7 +92,8 @@
         width: 95%;
     }
 
-    .input-wrapper, .button-container {
+    .input-wrapper,
+    .button-container {
         width: 80%;
     }
 }
@@ -100,5 +102,4 @@
     .signup-container {
         margin-top: var(--header-height-mobile);
     }
- }
- 
+}

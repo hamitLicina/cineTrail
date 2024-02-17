@@ -28,7 +28,7 @@
     margin: 0 auto;
     min-height: 50vh;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px 0px rgba(118,118,118,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(118, 118, 118, 0.75);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
 }
 
 .title-container p {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .input-wrapper {
@@ -47,26 +47,27 @@
 }
 
 .input-wrapper input {
-   border: none;
-   padding: 8px 16px;
-   border-radius: 8px;
-   margin-top: 10px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
 .input-wrapper-light input {
-  border: 1px solid var(--footer-bg);
+    border: 1px solid var(--footer-bg);
 }
 
-.cancelbtn, .signupbtn {
+.cancelbtn,
+.signupbtn {
     border: none;
     padding: 5px 16px;
     border-radius: 8px;
-    color: white; 
+    color: white;
     cursor: pointer;
 }
 
 .success-message {
-    font-size:1.5rem;
+    font-size: 1.5rem;
     font-style: italic;
 }
 
@@ -88,10 +89,12 @@
 @media (max-width:768px) {
 
     .signup-form {
-        width:95%;
+        width: 95%;
     }
-    .input-wrapper, .button-container {
-        width:80%;
+
+    .input-wrapper,
+    .button-container {
+        width: 80%;
     }
 }
 
@@ -99,5 +102,4 @@
     .signup-container {
         margin-top: var(--header-height-mobile);
     }
- }
- 
+}

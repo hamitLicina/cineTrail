@@ -7,14 +7,14 @@ import { ThemeContext } from '../../contexts/ThemeContext'
 
 
 
-const HomePage = ({apiKey, baseUrl}) => {
+const HomePage = ({ apiKey, baseUrl }) => {
 
   const { darkMode, setDarkMode } = useContext(ThemeContext)
   const [popularMovies, setPopularMovies] = useState([])
   const [topRatedMovies, setTopRatedMovies] = useState([])
   const [page, setPage] = useState(1)
   const pageNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  
+
   // console.log(`${baseUrl}/movie/popular?api_key=${apiKey}`);
 
 
@@ -30,7 +30,7 @@ const HomePage = ({apiKey, baseUrl}) => {
     }
     fetchMovies()
   }, [page])
-  
+
   useEffect(() => {
     const fetchMovies = async () => {
       try {
@@ -44,10 +44,10 @@ const HomePage = ({apiKey, baseUrl}) => {
     fetchMovies()
   }, [])
 
-const handlePage = page => {
-  setPage(page)
-  scrollTo({ top: 550, left: 0, behavior: "smooth" })
-}
+  const handlePage = page => {
+    setPage(page)
+    scrollTo({ top: 550, left: 0, behavior: "smooth" })
+  }
 
   return (
     <div className={`homepage-container ${!darkMode && "home-light"}`}>
@@ -58,7 +58,7 @@ const handlePage = page => {
           <div className="popular-cards-wrapper">
             {
               popularMovies.map(movie => {
-                return ( <MovieCard height="300px" width="200px" movie={movie} imageUrl={movie?.poster_path} radius="16px" cardStyle="popular-card" key={movie?.id} /> )
+                return (<MovieCard height="300px" width="200px" movie={movie} imageUrl={movie?.poster_path} radius="16px" cardStyle="popular-card" key={movie?.id} />)
               })
             }
           </div>
@@ -72,7 +72,7 @@ const handlePage = page => {
           <div className="top-rated-cards-wrapper">
             {
               topRatedMovies.map((movie) => {
-                return ( <MovieCard height="100px" width="200px" imageUrl={movie?.backdrop_path} movie={movie} cardStyle="top-rated-card" key={movie?.id} /> )
+                return (<MovieCard height="100px" width="200px" imageUrl={movie?.backdrop_path} movie={movie} cardStyle="top-rated-card" key={movie?.id} />)
               })
             }
           </div>

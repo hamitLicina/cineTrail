@@ -7,19 +7,20 @@ import { UserContext } from '../../contexts/UserContext'
 
 
 const MyFavorites = ({ serverUrl }) => {
-    
-    const [movies, setMovies] = useState([])
-    const { user, token } = useContext(UserContext)
-    
-    useEffect(() => {
-      axios.get(`${serverUrl}/favoriteMovies/user/${user?._id}`)
+
+  const [movies, setMovies] = useState([])
+  const { user, token } = useContext(UserContext)
+
+  useEffect(() => {
+    axios.get(`${serverUrl}/favoriteMovies/user/${user?._id}`)
       .then((res) => {
         console.log(res.data)
-        setMovies(res.data.favorites)})
+        setMovies(res.data.favorites)
+      })
       .catch((err) => console.log(err))
-    }, [user]);
+  }, [user]);
 
-     
+
   return (
     <div className="favorites-container">
       {token ? (
