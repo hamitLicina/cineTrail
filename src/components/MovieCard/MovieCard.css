@@ -1,5 +1,5 @@
 .popular-card {
-    cursor:pointer;
+    cursor: pointer;
     margin: 20px 20px 0 0;
 }
 
@@ -9,7 +9,7 @@
     top: 0;
     padding: 5px;
     color: var(--red);
-    /* font-size: 48px;  */ 
+    /* font-size: 48px;  */
 }
 
 .movie-info-bottom {
@@ -49,12 +49,12 @@
 }
 
 @keyframes myAnim {
-    
- 0% {
-  opacity: 0;
- }
 
- 100% {
-  opacity: 1;
- }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

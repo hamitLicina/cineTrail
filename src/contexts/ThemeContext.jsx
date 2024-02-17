@@ -8,14 +8,14 @@ export default function ThemeContextProvider(props) {
 
     useEffect(() => {
         const theme = localStorage.getItem('darkMode');
-        if(theme) {
+        if (theme) {
             setDarkMode(JSON.parse(theme));
         }
     }, []);
 
     return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-        {props.children}
-    </ThemeContext.Provider>
+        <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+            {props.children}
+        </ThemeContext.Provider>
     );
 }

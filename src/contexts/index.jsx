@@ -7,9 +7,9 @@ export default function CombinedContextProvider(props) {
 
   return (
     <ThemeContextProvider>
-        <UserContextProvider>
-          {props.children}
-        </UserContextProvider>
+      <UserContextProvider>
+        {props.children}
+      </UserContextProvider>
     </ThemeContextProvider>
-  ) 
+  )
 }

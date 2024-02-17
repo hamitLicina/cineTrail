@@ -8,11 +8,12 @@
     z-index: 1;
 }
 
-.header-container, .navigation-container {
+.header-container,
+.navigation-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color:var(--white);
+    color: var(--white);
 }
 
 .header-light {
@@ -45,17 +46,17 @@
 }
 
 .search-input::placeholder {
-   color: var(--grey-text);
+    color: var(--grey-text);
 }
 
 .search-input:focus {
-  outline: none;
-  border-radius: 0;
+    outline: none;
+    border-radius: 0;
 }
 
 .input-light {
-background-color: var(--footer-bg);
-color: var(--white);
+    background-color: var(--footer-bg);
+    color: var(--white);
 }
 
 .input-light::placeholder {
@@ -133,104 +134,106 @@ color: var(--white);
     align-items: center;
     justify-content: center;
     margin-left: 10px;
-  }
+}
 
-  .profile-light {
-      color: black;
-  }
+.profile-light {
+    color: black;
+}
 
-  .profile-img {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      cursor: pointer;
-  }
+.profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
-  .profile-options {
-      position: absolute;
-      top: var(--header-height);
-      right: 0;
-      width: 130px;
-      background-color: var(--dark-bg);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 5px 0;
-  }
+.profile-options {
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    width: 130px;
+    background-color: var(--dark-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+}
 
-  .profile-options a {
-      color: var(--white);
-      cursor: pointer;
-  }
+.profile-options a {
+    color: var(--white);
+    cursor: pointer;
+}
 
-  .create-account {
-      background-color: var(--red);
-      padding: 8px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      border: none;
-      color: var(--white);
-      margin-left: 10px;
-  }
+.create-account {
+    background-color: var(--red);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    color: var(--white);
+    margin-left: 10px;
+}
 
-  .create-account-btn {
-      background-color: var(--red);
-      padding: 8px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      border: none;
-      color: var(--white);
-      margin-left: 10px;
-  }
+.create-account-btn {
+    background-color: var(--red);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    color: var(--white);
+    margin-left: 10px;
+}
 
-  .logout {
-      color: var(--red);
-      font-size: 0.75rem;
-      cursor: pointer;
-  }
+.logout {
+    color: var(--red);
+    font-size: 0.75rem;
+    cursor: pointer;
+}
 
-  @keyframes input {
+@keyframes input {
 
-      0% {
-          opacity: 0;
-          transform: translateY(-10px);
-      }
-  
-      100% {
-          opacity: 1;
-          transform: translateY(0);
-      }
-  }
-  
-  
-  @media (max-width:600px) {
-      .header-container {
-         flex-direction: column;
-         height: var(--header-height-mobile);
-         padding: 10px 0;
-         justify-content: space-around;
-      }
-  
-      .search-container, .profile-container {
-         margin-top: 10px; 
-      }
-  }
-  
-  @media (max-width:468px) {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 
-      .logo {
-          font-size: 1.5rem;
-      }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-      .search-container {
-          width:60%;
-      }
 
-      .search-results-item p {
-          font-size: 0.75rem;
-      }
+@media (max-width:600px) {
+    .header-container {
+        flex-direction: column;
+        height: var(--header-height-mobile);
+        padding: 10px 0;
+        justify-content: space-around;
+    }
 
-  }
+    .search-container,
+    .profile-container {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width:468px) {
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .search-container {
+        width: 60%;
+    }
+
+    .search-results-item p {
+        font-size: 0.75rem;
+    }
+
+}
+
 /* 
 .header-light {
     background-color: var(--light-bg);
